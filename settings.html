@@ -1,0 +1,432 @@
+                <!DOCTYPE html>
+                <html lang="en">
+                
+<!-- Mirrored from 6a5085b2-ee5d-4bdd-a4e8-771974e3f8b2-00-10a324zln5mqe.kirk.replit.dev/settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Jun 2024 20:30:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+                    <link rel="icon" type="image/x-icon" href="assets/img/glacierarcade.png">
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta name="title" content="GlacierArcade Unblocked Games" />
+                    <meta name="description" content="Glacier Arcade Unblocked Games offers a diverse selection of engaging and immersive games suitable for players of all ages, there’s something fun waiting for you at unblocked Glacier Arcade! 🎮🕹️" />
+                    <meta name="keywords" content="gaming, arcade, entertainment, educational games, fun, unblocked, proxy, unblocker, glacier arcade, html, glacier arcade unblocked games, unblocked games glacier arcade, unblocked games, games unblocked, glacier unblocked arcade">
+                    <!-- Open Graph / Facebook -->
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://glacier-arcade.web.app/" />
+                    <meta property="og:title" content="GlacierArcade Unblocked Games" />
+                    <meta property="og:description" content="Glacier Arcade Unblocked Games offers a diverse selection of engaging and immersive games suitable for players of all ages, there’s something fun waiting for you at unblocked Glacier Arcade! 🎮🕹️" />
+                    <meta property="og:image" content="../arcadeglacier.pages.dev/glacierarcademeta.png" />
+                    <title>GlacierArcade ┃ Settings</title>
+                    <div id="particles-js"></div>
+                    <!-- Navbar -->
+                    <nav class="navbar" style="position: fixed; top: 0; left: 0; width: 100%;">
+                        <div class="navbar-container">
+                            <input type="checkbox" id="menu-toggle">
+                            <label for="menu-toggle" class="hamburger-lines">
+                                <span class="line line1"></span>
+                                <span class="line line2"></span>
+                                <span class="line line3"></span>
+                            </label>
+                            <ul class="menu-items">
+                                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                                <li><a href="gxmes.html">Games</a></li>
+                                <li><a href="apps.html">Apps</a></li>
+                                <li><a href="prox.html">Search</a></li>
+                                <li><a href="utilities.html">Utilities</a></li>
+                                <li><a href="extra.html">Extra</a></li>
+                                <li><a href="settings.html"><i class="fa-solid fa-gear"></i></a></li>
+                            </ul>
+                            <a href="index.html">
+                                <div class="logo-small"><img src="assets/img/glacierarcade.png" width="40" height="40" alt="logo small"></div>
+                            </a>
+                        </div>
+                        </nav>
+                    <!-- Navbar -->
+
+
+                    <script>
+                        // Function to set a cookie
+                        function setCookie(name, value, options) {
+                            options = options || {};
+
+                            // If expiration is provided and it's a number, convert it to a date
+                            let expires = options.expires;
+                            if (typeof expires == "number" && expires) {
+                                const d = new Date();
+                                d.setTime(d.getTime() + expires * 24 * 60 * 60 * 1000);
+                                expires = options.expires = d;
+                            }
+
+                            // If expires is a Date object, convert it to UTC string
+                            if (expires && expires.toUTCString) {
+                                options.expires = expires.toUTCString();
+                            }
+
+                            // Encode value
+                            value = encodeURIComponent(value);
+
+                            // Construct the cookie string
+                            let updatedCookie = name + "=" + value;
+
+                            // Append other options to the cookie string
+                            for (const propName in options) {
+                                updatedCookie += "; " + propName;
+                                const propValue = options[propName];
+                                if (propValue !== true) {
+                                    updatedCookie += "=" + propValue;
+                                }
+                            }
+
+                            // Set the cookie
+                            document.cookie = updatedCookie;
+                        }
+
+                        // Function to get a cookie value by its name
+                        function getCookie(name) {
+                            const matches = document.cookie.match(new RegExp(
+                                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                            ));
+                            return matches ? decodeURIComponent(matches[1]) : undefined;
+                        }
+
+                        // Function to delete a cookie
+                        function deleteCookie(name) {
+                            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                        }
+
+                        // Event listener for when the DOM content is fully loaded
+                        document.addEventListener("DOMContentLoaded", function() {
+                            // DOM elements
+                            const presetSelect = document.getElementById("presetSelect");
+                            const saveButton = document.getElementById("saveButton");
+                            const resetButton = document.getElementById("resetButton");
+                            const successMessage = document.getElementById("success");
+
+                            // Retrieve selected preset value from cookie and set the dropdown menu value
+                            const selectedPreset = getCookie("tabCloakPreset");
+                            if (selectedPreset) {
+                                presetSelect.value = selectedPreset;
+                            }
+
+                            // Event listener for save button click
+                            saveButton.addEventListener("click", function() {
+                                const selectedValue = presetSelect.value;
+
+                                // Display success message
+                                successMessage.textContent = "Cloak success! Please refresh to see any changes.";
+                                setCookie("tabCloakPreset", selectedValue, { expires: 365 });
+
+                                // Show success message and hide after 3 seconds
+                                successMessage.style.display = "block";
+                                setTimeout(function() {
+                                    successMessage.style.display = "none";
+                                }, 3000);
+                            });
+
+                            // Event listener for reset button click
+                            resetButton.addEventListener("click", function() {
+                                // Delete preset cookie and reset dropdown
+                                deleteCookie("tabCloakPreset");
+                                presetSelect.selectedIndex = 0;
+
+                                // Display reset message
+                                successMessage.textContent = "Cloaking has been reset, please refresh the page.";
+                                successMessage.style.display = "block";
+
+                                // Hide message after 3 seconds
+                                setTimeout(function() {
+                                    successMessage.style.display = "none";
+                                }, 3000);
+                            });
+                        });
+
+                    </script>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui, shrink-to-fit=yes">
+                    <!--  -->
+
+                    <!-- Fonts -->
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@900&amp;display=swap">
+
+                    <!-- Font Awesome -->
+                    <script src="../kit.fontawesome.com/7ef0c24be7.js" crossorigin="anonymous"></script>
+
+                    <!-- Stylesheets -->
+                    <link rel="stylesheet" href="assets/css/gxmes.css">
+                    <link rel="stylesheet" href="assets/css/navbar.css">
+                    <link href="ty.css" rel="stylesheet" type="text/css" />
+                    <link href="bounce.html" rel="stylesheet" type="text/css" />
+
+                   
+
+                    <!-- Styles -->
+                    <style>
+                        }
+                        /* Rest of your existing styles */
+                        /* Font Face */
+                        @font-face {
+                            font-family: "Lexend", sans-serif;
+                            src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap');
+                        }
+
+                        /* Message Box */
+                        .message-box {
+                            position: fixed;
+                            top: 20px;
+                            right: 20px;
+                            padding: 20px;
+                            background: #252525;
+                            border: 0px solid #ccc;
+                            border-left: 5px solid red;
+                            border-radius: 5px;
+                            z-index: 999; /* Lower z-index */
+                            display: none;
+                            font-size: 20px;
+                            font-family: "Lexend", sans-serif;
+                            color: #ffffff; 
+                        }
+
+                        /* Additional Styles */
+                        p, h2, h5, h4 {
+                            color: w;
+                        }
+
+                        body {
+                            text-align: center;
+                            padding-top: 60px; /* Adjust for the fixed navbar */
+                        }
+
+                        a {
+                            text-align: left;
+                        }
+
+                        /* Navbar */
+                        .navbar {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            z-index: 1000; /* Higher z-index */
+                        }
+
+                        #box {
+                            margin-top: calc(100px - 3%); /* Adjust according to your navbar height */
+                            z-index: 998; /* Lower z-index than navbar */
+                        }
+                        /* Slimmer scrollbar */
+                        ::-webkit-scrollbar {
+                          width: 5px; /* width of the scrollbar */
+                        }
+
+                        ::-webkit-scrollbar-track {
+                          background: #222; /* color of the track */
+                        }
+
+                        ::-webkit-scrollbar-thumb {
+                          background: #555; /* color of the thumb */
+                          border-radius: 10px; /* roundness of the thumb */
+                            }
+                        /* Style the select box */
+                        /* Style the select box */
+                        select {
+                            width: 200px; /* Set the desired width */
+                            padding: 10px;
+                            font-size: 16px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            background-color: #f9f9f9;
+                            font-family: 'Lexend', sans-serif; /* Use the Lexend font */
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle glow effect */
+                        }
+
+                        /* Style the dropdown arrow */
+                        select::-ms-expand {
+                            display: none; /* Hide the default arrow in IE/Edge */
+                        }
+
+                        /* Style the dropdown options */
+                        option {
+                            font-size: 14px;
+                            padding: 5px;
+                        }
+                        button:hover {
+                          transition: all .2s ease-in-out;
+                          z-index: 1; /* Ensure the shadow is above other buttons */
+                          position: relative; /* Ensure z-index works */
+                        }
+                        .styled-input {
+                            width: 200px;
+                            padding: 10px;
+                            font-size: 16px;
+                            border: 1px solid #ccc;
+                            border-radius: 15px; /* Increase border radius for a more rounded look */
+                            background-color: #f9f9f9;
+                            font-family: 'Lexend', sans-serif;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                        }
+
+                        .styled-input:focus {
+                            outline: none; /* Remove outline on focus */
+                        }
+
+                        .styled-input::placeholder {
+                            color: #888; /* Placeholder color */
+                        }
+                        ab {
+                          font-size: 1.2em;
+                          padding: 15px 30px;
+                          margin: 10px auto; /* Center horizontally */
+                          background-color: #000000;
+                          color: #ffffff;
+                          border: none;
+                          border-radius: 8px;
+                          cursor: pointer;
+                          transition: background-color 0.3s ease;
+                          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                          z-index: 9999;
+                        }
+
+
+                    </style>
+                </head>
+                <body>
+                    <!-- Box -->
+                    <div id="box">
+                        <div class="message-box" id="messageBox"></div>
+                        <!-- Logo -->
+                        <div class="logo">
+                        </div><!-- /.logo -->
+                        <!-- Controls -->
+                        <div class="controls">
+                            <h1 class="gtext">Glacier Arcade</h1>
+                            <!-- Cloaker -->
+
+                            <h3>Settings</h3>
+                              <div style="height: 1em;"></div>
+                            <script>
+                                var urlObj = new window.URL(window.location.html);
+                                var url = window.location;
+
+                                if (url) {
+                                    var win;
+                                }
+                            </script>
+
+                            <!-- Navigation Buttons -->
+                            <hr class="cyan">
+                            <!-- Navigation Buttons -->
+                              <div style="height: 1em;"></div>
+                            <h4>About:Blank</h4>
+                            <button class="ab">About:Blank Tab</button>
+                            <button class="btn" onclick="openNewWindow()">About:Blank Window</button>
+                            <h4>Click to open the site in about:blank, it helps hiding link from history.</h4>
+                            <div style="height: 1em;"></div>
+                            <script>
+                                var urlObj = new window.URL(window.location.html);
+                                var url = window.location;
+
+                                if (url) {
+                                    var win;
+                                }
+                                // This function opens a new window with the current URL.
+                                function openNewWindow() {
+                                    // Get the current URL
+                                    const currentURL = window.location.href;
+
+                                    // Open a new window with specified dimensions
+                                    const newWindow = window.open('about:blank', '_blank', 'width=800,height=600');
+
+                                    // Write an HTML embed tag to display the current URL in the new window
+                                    newWindow.document.write('<html lang="en"><body style="margin: 0; padding: 0;"><embed src="' + currentURL + '" style="width: 100%; height: 100%;"></embed></body></html>');
+
+                                    // Close the document in the new window
+                                    newWindow.document.close();
+                                }
+                                function hideURL() {
+                                    var newURL = "about_blank.html"; // Replace this with the URL you want to show
+                                    history.replaceState(null, null, newURL);
+                                    document.getElementById('messageBox').innerText = 'URL hidden from history.';
+                                    setTimeout(function() {
+                                        document.getElementById('messageBox').innerText = '';
+                                    }, 2000); // Hide the message after 2 seconds
+                                }
+                                </script>
+                                <script>
+                                var urlObj = new window.URL(window.location.html);
+                                  var url = window.location.href;
+                                  if (url) {
+                                    var win;
+
+                                    document.querySelector('.ab').onclick = function() {
+                                      if (win) {
+                                        win.focus();
+                                      } else {
+                                        win = window.open();
+                                        win.document.body.style.margin = '0';
+                                        win.document.body.style.height = '100vh';
+                                        var iframe = win.document.createElement('iframe');
+                                        iframe.style.border = 'none';
+                                        iframe.style.width = '100%';
+                                        iframe.style.height = '100%';
+                                        iframe.style.margin = '0';
+                                        iframe.src = url;
+                                        win.document.body.appendChild(iframe);
+                                        window.location.replace("index.html");
+                                      }
+                                    };
+                                  }
+
+                            </script>
+                         
+                            <hr>
+                             <div class="section tab-cloak">
+
+                                     <div class="buttons">
+                                           <div style="height: 1em;"></div>
+                                         <h4>Tab Cloak</h4>
+                                         <select id="presetSelect">
+                                             <option value="google">Google</option>
+                                             <option value="googleclass">Google Classroom</option>
+                                             <option value="googledrive">Google Drive</option>
+                                              <option value="docs">Google Docs</option>
+                                             <option value="tab">Chrome New Tab</option>
+                                             <option value="gmail">Gmail</option>
+                                              <option value="word">Word</option>
+                                               <option value="school">Schoology</option>
+                                                <option value="StudentVue">StudentVue</option>
+                                                <option value="canvas">Canvas</option>
+                                             <option value="clever">Clever</option>
+
+
+                                         </select>
+
+                                         <button id="saveButton">Set</button>
+                                         <button id="resetButton">Reset</button>
+                                         <h4>Disguise the site tab!</h4>
+                                          <p id="success" style="display: none;">success message here</p>
+                                           <div style="height: 1em;"></div>
+                                     </div>
+<hr>
+                                   <div style="height: 1em;"></div>
+                                 <div class="box redirect-button">
+                                     <h4>Panic Button</h4>
+                                        <div style="height: 0.5em;"></div>
+                                     <div class="input">
+                                         <input id="key-input" class="styled-input" type="text" placeholder="Put panic key here" value="]" style="color: black;">
+                                         <input id="website-input" class="styled-input" type="text" placeholder="Put panic link here" value="https://classroom.gooogle.com" style="color: black;">
+                                         
+                                            <div style="height: 0.5em;"></div>
+                                          <h4>Hide this website when pressed, also don't use a common key. (Coming Soon!)</h4>
+
+                                     </div>
+                                 </div>
+
+                                 </div>
+                            <div id="particles-js"></div>
+                            <script src="particles.js"></script>
+                            <script src="app.js"></script>
+                            <script src="assets/js/tabcloak.js"></script>
+                            </body>
+                            
+<!-- Mirrored from 6a5085b2-ee5d-4bdd-a4e8-771974e3f8b2-00-10a324zln5mqe.kirk.replit.dev/settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Jun 2024 20:30:47 GMT -->
+</html>

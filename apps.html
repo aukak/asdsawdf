@@ -1,0 +1,353 @@
+            <!DOCTYPE html>
+            <html lang="en">
+            
+<!-- Mirrored from 6a5085b2-ee5d-4bdd-a4e8-771974e3f8b2-00-10a324zln5mqe.kirk.replit.dev/apps.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Jun 2024 20:30:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+                <script>
+                    function searchFunction() {
+                        var input, filter, gallery, a, i, txtValue;
+                        input = document.getElementById('searchInput');
+                        filter = input.value.toUpperCase();
+                        gallery = document.getElementsByClassName('gallery')[0];
+                        a = gallery.getElementsByTagName('a');
+                        for (i = 0; i < a.length; i++) {
+                            txtValue = a[i].getAttribute('title');
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = '';
+                            } else {
+                                a[i].style.display = 'none';
+                            }
+                        }
+                    }
+
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var loadingScreen = document.getElementById('loadingScreen');
+                        loadingScreen.style.opacity = 1;
+
+                        setTimeout(function() {
+                            loadingScreen.style.opacity = 0;
+                            setTimeout(function() {
+                                loadingScreen.style.display = 'none';
+                            }, 500);
+                        }, 500);
+                    });
+
+
+
+                function filterByCategory() {
+                    var category = document.getElementById('categorySelect').value;
+                    var gallery = document.getElementsByClassName('gallery')[0];
+                    var a = gallery.getElementsByTagName('a');
+
+                    for (var i = 0; i < a.length; i++) {
+                        var gameCategory = a[i].getAttribute('data-category');
+
+                        if (category === 'all' || gameCategory === category) {
+                            a[i].style.display = '';
+                        } else {
+                            a[i].style.display = 'none';
+                        }
+                    }
+                }
+                </script>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@900&amp;display=swap">
+                <script src="../kit.fontawesome.com/7ef0c24be7.js" crossorigin="anonymous"></script>
+                <script src="assets/js/tabcloak.js"></script>
+                
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>GlacierArcade ┃ Apps</title>
+                <link rel="icon" type="image/x-icon" href="assets/img/glacierarcade.png">
+                <link rel="stylesheet" href="assets/css/gm.css">
+                <link rel="stylesheet" href="assets/css/navbar.css">
+                <link rel="stylesheet" href="assets/css/info.html">
+                <link rel="stylesheet" href="assets/css/footer.css">
+                <style>
+                    /* Dark gray blank rectangle class */
+                    .gallery img.loading {
+                        background-color: #444; /* Dark gray */
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+
+                    #particles-js {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1; /* Ensure it's behind other content */
+                    }
+                    .gallery a:hover::before {
+                        content: attr(title);
+                        position: absolute;
+                        background-color: #000;
+                        color: #fff;
+                        padding: 4px 8px;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+                    .gallery a:hover::before {
+                        opacity: 1;
+                    }
+                    ::-webkit-scrollbar {
+                      width: 5px; /* width of the scrollbar */
+                    }
+
+                    ::-webkit-scrollbar-track {
+                      background: #222; /* color of the track */
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                      background: #fff; /* color of the thumb */
+                      border-radius: 10px; /* roundness of the thumb */
+                      box-shadow: 0 0 10px #fff; /* Add glowing effect */
+                    }
+                    .gtext {
+                      font-size: 3rem;
+                      text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+                      font-family: "Lexend", sans-serif;
+                    }
+                    #searchInput,
+                    #categorySelect {
+                      margin-top: 70px;
+                      width: 200px; /* Adjust width as needed */
+                      padding: 8px 20px; /* Adjust padding as needed */
+                      text-align: center;
+                      border: 2px solid #111111; /* Add black border */
+                      border-radius: 20px; /* Add rounded borders */
+                      background-color: #f0f0f0; /* Add background color */
+                      font-family: 'Lexend', sans-serif; /* Change font family */
+                        color: #111111; /* Placeholder text color */
+                    }
+
+                    #searchInput::placeholder,
+                    #categorySelect::placeholder {
+                      text-align: center;
+                      font-family: 'Lexend', sans-serif; /* Change placeholder font family */
+                        color: #111111; /* Placeholder text color */
+                    }
+
+                    /* Loading screen styles */
+                    #loadingScreen {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: 	#141414; /* Dark background */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1; /* Ensure it's above other content */
+                        opacity: 1; /* Initially visible */
+                        transition: opacity 0.5s ease; /* Smooth fade-in */
+                    }
+
+                    .loader {
+                        border: 8px solid #f3f3f3; /* Light gray border */
+                        border-top: 8px solid #111111;
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        animation: spin 1s linear infinite; /* Smooth spinning animation */
+                    }
+
+
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                </style>
+                </head>
+
+                    <!-- Loading screen -->
+                    <div id="loadingScreen">
+                        <div class="loader"></div>
+                    </div>
+            </head>
+            <body>
+                <!-- Navbar -->
+                <nav class="navbar" style="position: fixed; top: 0; left: 0; width: 100%;">
+                    <div class="navbar-container">
+                        <input type="checkbox" id="menu-toggle">
+                        <label for="menu-toggle" class="hamburger-lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </label>
+                        <ul class="menu-items">
+                            <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                            <li><a href="gxmes.html">Games</a></li>
+                            <li><a href="apps.html">Apps</a></li>
+                            <li><a href="prox.html">Search</a></li>
+                            <li><a href="utilities.html">Utilities</a></li>
+                            <li><a href="extra.html">Extra</a></li>
+                            <li><a href="settings.html"><i class="fa-solid fa-gear"></i></a></li>
+                        </ul>
+                        <a href="index.html">
+                            <div class="logo-small"><img src="assets/img/glacierarcade.png" width="40" height="40" alt="logo small"></div>
+                        </a>
+                    </div>
+                    </nav>
+                <!-- Navbar -->
+                <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search for Apps..."> 
+                <!-- Categories box -->
+                <select id="categorySelect" onchange="filterByCategory()">
+                    <option value="all">All Categories</option>
+                    <option value="normal">Apps</option>
+                    <option value="proxied">Proxied Apps</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <div id="particles-js"></div>
+                <div class="gallery">
+
+                    <!-- Normal Apps -->
+                    <a href="apps/ruffle.html" title="Ruffle" data-category="normal"><img src="assets/img/appimg/ruffle-flash-player-emulator.png" alt="ChatGPT""></a>
+                    <a href="apps/emulatorjs.html" title="Emulator.js" data-category="normal"><img src="assets/img/appimg/emulatorjs.png" alt="Emulator.js""></a>
+                    <a href="apps/webretro.html" title="WebRetro" data-category="normal"><img src="assets/img/appimg/webretro.png" alt="WebRetro"></a>
+                    <a href="apps/v86.html" title="v86" data-category="normal"><img src="assets/img/appimg/v86.png" alt="v86"></a>
+                    <a href="apps/windows10.html" title="Windows 10" data-category="normal"><img src="assets/img/appimg/windows10.jpg" alt="Windows 10"></a>
+                    <a href="apps/windows11.html" title="Windows 11" data-category="normal"><img src="assets/img/appimg/windows11.jpg" alt="Windows 11"></a>
+                    <a href="apps/ios.html" title="IOS" data-category="normal"><img src="assets/img/appimg/ios.jpg" alt="IOS"></a>
+                    <a href="apps/and.html" title="Android" data-category="normal"><img src="assets/img/appimg/and.png" alt="Android"></a>
+                    <a href="apps/and.html" title="HTML Coder" data-category="normal"><img src="assets/img/appimg/htmlcoder.png" alt="HTML Coder"></a>
+                    <a href="apps/thirtydollarwebsite.html" title="Thirty Dollar Website" data-category="normal"><img src="assets/img/appimg/thirtydollar.jpg" alt="Thirty Dollar Website""></a>
+                    <!-- Proxied Apps -->
+                    <a href="ultraprox/co.html" title="Copilot" data-category="proxied"><img src="assets/img/copilot.png" alt="Copilot"></a>
+                    <a href="ultraprox/geforce.html" title="Geforce Now" data-category="proxied"><img src="assets/img/geforce.jpg" alt="Geforce Now"></a>
+                    <a href="ultraprox/nowgg.html" title="Now GG" data-category="proxied"><img src="assets/img/nowgg.jpg" alt="Now GG"></a>
+                    <a href="ultraprox/duck.html" title="DuckDuckGo" data-category="proxied"><img src="assets/img/duck.png" alt="DuckDuckGo"></a>
+                    <a href="ultraprox/goog.html" title="Google" data-category="proxied"><img src="assets/img/google.jpg" alt="Google"></a>
+                    <a href="ultraprox/yt.html" title="YouTube" data-category="proxied"><img src="assets/img/yt.jpg" alt="YouTube"></a>
+                    <a href="ultraprox/twitch.html" title="Twitch" data-category="proxied"><img src="assets/img/t.png" alt="Twitch"></a>
+                    <a href="ultraprox/tt.html" title="TikTok" data-category="proxied"><img src="assets/img/tt.png" alt="TikTok"></a>
+                    <a href="ultraprox/sc.html" title="Snapchat" data-category="proxied"><img src="assets/img/sc.jpg" alt="Snapchat"></a>
+                    <a href="ultraprox/red.html" title="Reddit" data-category="proxied"><img src="assets/img/redd.png" alt="Reddit"></a>
+                    <a href="ultraprox/dc.html" title="Discord" data-category="proxied"><img src="assets/img/disc.png" alt="Discord"></a>
+                    <a href="ultraprox/spot.html" title="Spotify" data-category="proxied"><img src="assets/img/s.jpg" alt="Spotify"></a>
+
+
+                  
+                </div>
+                <h6>All apps on this website belong to their respective owners.</h6>
+<br>
+                <!-- Footer -->
+                <footer>
+                    <!-- Your footer content here -->
+                </footer>
+                <!-- End Footer -->
+
+                <script src="../cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+                <script>
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: {
+                                value: 80,
+                                density: {
+                                    enable: true,
+                                    value_area: 1000
+                                }
+                            },
+                            color: {
+                                value: '#ffffff'
+                            },
+                            shape: {
+                                type: 'circle',
+                                stroke: {
+                                    width: 0,
+                                    color: '#000000'
+                                },
+                                polygon: {
+                                    nb_sides: 5
+                                }
+                            },
+                            opacity: {
+                                value: 0.5,
+                                random: false,
+                                anim: {
+                                    enable: false,
+                                    speed: 1,
+                                    opacity_min: 0.1,
+                                    sync: false
+                                }
+                            },
+                            size: {
+                                value: 3,
+                                random: true,
+                                anim: {
+                                    enable: false,
+                                    speed: 40,
+                                    size_min: 0.1,
+                                    sync: false
+                                }
+                            },
+                            line_linked: {
+                                enable: true,
+                                distance: 150,
+                                color: '#ffffff',
+                                opacity: 0.4,
+                                width: 1
+                            },
+                            move: {
+                                enable: true,
+                                speed: 6,
+                                direction: 'none',
+                                random: false,
+                                straight: false,
+                                out_mode: 'out',
+                                bounce: false,
+                                attract: {
+                                    enable: false,
+                                    rotateX: 600,
+                                    rotateY: 1200
+                                }
+                            }
+                        },
+                        interactivity: {
+                            detect_on: 'canvas',
+                            events: {
+                                onhover: {
+                                    enable: true,
+                                    mode: 'repulse'
+                                },
+                                onclick: {
+                                    enable: true,
+                                    mode: 'push'
+                                },
+                                resize: true
+                            },
+                            modes: {
+                                grab: {
+                                    distance: 400,
+                                    line_linked: {
+                                        opacity: 1
+                                    }
+                                },
+                                bubble: {
+                                    distance: 400,
+                                    size: 40,
+                                    duration: 2,
+                                    opacity: 8,
+                                    speed: 3
+                                },
+                                repulse: {
+                                    distance: 200
+                                },
+                                push: {
+                                    particles_nb: 4
+                                }
+                            }
+                        }
+                        
+                    });
+                </script>
+                <script src="assets/js/tabcloak.js"></script>
+            </body>
+            
+<!-- Mirrored from 6a5085b2-ee5d-4bdd-a4e8-771974e3f8b2-00-10a324zln5mqe.kirk.replit.dev/apps.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Jun 2024 20:30:39 GMT -->
+</html>

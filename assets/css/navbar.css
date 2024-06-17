@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.html {
+    font-size: 100%;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+    display: none;
+}
+
+.navbar-container {
+    width: 90%;
+    margin: auto;
+}
+
+.navbar {
+    box-shadow: 0px 3px 7px 0px #e2dada;
+    position: fixed;
+    width: 100%;
+    background: #151619;
+    color: #fff;
+    opacity: 0.95;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+}
+
+
+.menu-items {
+    order: 2;
+    display: flex;
+}
+
+.logo {
+    order: 1;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    position: relative; /* Add this */
+}
+
+.menu-items li::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 10px);
+    background-color: #363636;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar a:hover {
+    color: #111212;
+}
+

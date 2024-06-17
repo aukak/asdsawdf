@@ -1,0 +1,80 @@
+<style>
+/* For screens under 600px */
+@media screen and (max-width: 1950px) {
+    body {
+        overflow-y: scroll; /* Always show vertical scrollbar */
+    }
+}
+
+/* For screens above 600px */
+@media screen and (min-width: 1951px) {
+    body {
+        overflow-y: hidden; /* Hide vertical scrollbar */
+    }
+    }
+    /* Rest of your existing styles */
+    /* Font Face */
+    @font-face {
+        font-family: "Lexend", sans-serif;
+        src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap');
+    }
+
+    /* Message Box */
+    .message-box {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 20px;
+        background: #252525;
+        border: 0px solid #ccc;
+        border-left: 5px solid red;
+        border-radius: 5px;
+        z-index: 999; /* Lower z-index */
+        display: none;
+        font-size: 20px;
+        font-family: "Lexend", sans-serif;
+        color: #ffffff; 
+    }
+
+    /* Additional Styles */
+    p, h2, h5, h4 {
+        color: white;
+    }
+
+    body {
+        text-align: center;
+        padding-top: 60px; /* Adjust for the fixed navbar */
+    }
+
+    a {
+        text-align: left;
+    }
+
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Higher z-index */
+    }
+
+    #box {
+        margin-top: calc(100px - 3%); /* Adjust according to your navbar height */
+        z-index: 998; /* Lower z-index than navbar */
+    }
+    /* Slimmer scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px; /* width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #222; /* color of the track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #555; /* color of the thumb */
+      border-radius: 10px; /* roundness of the thumb */
+    }
+
+</style>

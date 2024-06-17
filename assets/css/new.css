@@ -1,0 +1,106 @@
+/* Global Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "Lexend", sans-serif;
+}
+
+/* Buttons */
+button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  margin: 10px auto; /* Center horizontally */
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+button:hover {
+  background-color: #575757;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+  transform: translateY(1px); /* Add slight push effect on active state */
+}
+
+/* Additional Buttons */
+a.game,
+button.btn,
+a.bmrklet,
+button.still-btn {
+  border-radius: 0.6rem;
+  background-color: #000000;
+  margin-right: 1%;
+  margin-top: 1%;
+  display: inline-block;
+  padding: 1rem;
+  font-size: 1.25rem;
+  transition: background-color 300ms, transform 500ms;
+}
+
+a.game:hover,
+button.btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7);
+}
+
+button.still-btn:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7);
+}
+
+button.btn:active,
+a.game:active,
+button.still-btn:active {
+  background-color: #ffffff;
+}
+
+/* Centers */
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  text-align: center;
+}
+
+/* Yex Link */
+
+/* Animations */
+
+@keyframes swap-bottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.tippy-box[data-theme~='darker'] {
+  background-color: #000000;
+}
+
+/* Motion Reduced */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  border: 100px;
+  border-color: #ffffff;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  color: white;
+  padding: 10px 20px;
+  z-index: 1000;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+header h1 p1 {
+  font-family: "Lexend", sans-serif;
+  font-size: 2.8em;
+  margin: 0;
+
+
+}
+
+nav {
+  text-align: center;
+
+}
+
+button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  margin: 10px auto; /* Center horizontally */
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-family: 'Lexend', sans-serif;
+}
+
+  
+}
+
+ab {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  margin: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.2);
+  z-index:9999;
+}
+
+button:hover {
+  background-color: #575757;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+  transition: all .2s ease-in-out;
+  z-index: 1; /* Ensure the shadow is above other elements */
+}
+
+
+#headerbtn {
+  font-size: 1.5em;
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: #ff00ea;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+  z-index:9999;
+}
+
+#headerbtn:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #1f1e1f, 0 0 20px #9e9e9e, 0 0 30px #282428;
+  transition: all .2s ease-in-out; 
+}
+.gallery {
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  padding: 0;
+  max-width: 1600px; /* Adjust max-width as needed */
+}
+
+.gallery a {
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  transition: transform 0.3s ease;
+  width: calc(20% - 20px); /* 20% for 5 games in a row, minus margin */
+  max-width: 300px; /* Adjust max-width as needed */
+  max-height: 200px;
+  overflow: hidden;
+  text-align: center;
+}
+.gallery a img {
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  max-height: 160px; /* Adjust max-height as needed */
+}
+
+@media screen and (max-width: 1600px) {
+  .gallery a {
+    width: calc(25% - 20px); /* 25% for 4 games in a row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery a {
+    width: calc(33.33% - 20px); /* 33.33% for 3 games in a row on even smaller screens */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gallery a {
+    width: calc(50% - 20px); /* 50% for 2 games in a row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery a {
+    width: calc(100% - 20px); /* 100% for 1 game per row on smallest screens */
+  }
+}
+
+  .gallery a {
+    position: relative;
+    transition: all .2s ease-in-out;
+  }
+
+  .gallery a::before {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+  z-index: 9999; /* Ensure the hover effect appears above other elements */
+}
+
+.gallery a:hover {
+  border-radius: 25px;
+  transform: scale(1.025); /* Increase scale for slight enlargement */
+  box-shadow: 0 0 10px #575757, 0 0 20px #ffffff, 0 0 30px #ffffff;
+  z-index: -0.99; /* Ensure the box shadow is above other elements */
+}
+
+
+
+}
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-position: 50% 50%;
+  position: fixed;
+  top: 0px;
+  z-index:1;
+}
+#roddyrichhesbox{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+   box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff;
+    min-width: 350px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 3px solid #ffffff;
+  border-radius: 10px;  
+    background: rgba(0, 0, 0, 0);
+    min-height: 250px;
+    padding: 20px;
+    z-index: 9999;
+    text-align: center;
+
+}
+
+@keyframes animatedBackground_a {
+  0% { background-position: 0 0 }
+  100% { background-position: -500px 0% }
+}
+.about-container {
+    padding: 20px;
+    background: #222425;
+    opacity: 0.85;
+    border-radius: 10px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  font-family: "Lexend", sans-serif;
+}
+/* Add this to your existing CSS */
+.gtext {
+  font-size: 3rem;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+  font-family: "Lexend", sans-serif;
+}
+
+
+.faq-title {
+    text-align: center;
+    font-size: 24px;
+    color: #fff; /* White text */
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: #404040; /* Slightly lighter grey background */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255, 0.5); /* Glowing border effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the box-shadow */
+}
+
+.faq-item:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5); /* Glowing effect on hover */
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff; /* Black text */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Glowing text effect */
+}
+
+.faq-item summary::marker {
+    color: #262626; /* Black color for the dropdown button */
+}
+
+.faq-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff; /* White text */
+    line-height: 1.5;
+}
+
+.faq-item p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faq-item p a:hover {
+    text-decoration: underline;
+}
+body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}

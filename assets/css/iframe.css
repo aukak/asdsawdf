@@ -1,0 +1,65 @@
+/* Adjust iframe dimensions */
+iframe {
+    width: 850px;
+    height: 450px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Fullscreen button styling */
+.fullscreen-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.fullscreen-button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+
+#iframe {
+    width: 850px;
+    height: 450px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+#iframe-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}
+
+#iframe-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #000;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: none;
+}
+.content {
+    padding-top: 70px;
+    text-align: center;
+    color: white;
+
+    }
+button:hover {
+  transition: all .2s ease-in-out;
+  z-index: 1; /* Ensure the shadow is above other buttons */
+  position: relative; /* Ensure z-index works */
+}
